@@ -17,6 +17,16 @@ function App() {
     }
   }
 
+  function selectPageHander(selectedPage) {
+    if (
+      selectedPage >= 1 &&
+      selectedPage <= products.length / 10 &&
+      selectedPage !== page
+    ) {
+      setPage(selectedPage);
+    }
+  }
+
   useEffect(() => {
     fetchProducts();
   }, []);
